@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC Manual Connection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>WebRTC Manual Connection</h2>
+        
+        <div id="role-selection">
+            <h3>Select Role</h3>
+            <button id="host-btn">Host</button>
+            <button id="guest-btn">Guest</button>
+        </div>
+
+        <div id="connection-card" class="hidden">
+            <h3 id="role-title">Role: </h3>
+
+            <div id="host-fields" class="hidden">
+                <label for="host-offer">Your Offer (Host):</label>
+                <textarea id="host-offer" rows="5" readonly></textarea>
+                <button id="generate-offer-btn" disabled>Generate Offer</button>
+                
+                <label for="guest-answer">Guest's Answer:</label>
+                <textarea id="guest-answer" rows="5" placeholder="Paste guest's answer here..." disabled></textarea>
+                <button id="connect-host-btn" disabled>Connect Host</button>
+            </div>
+
+            <div id="guest-fields" class="hidden">
+                <label for="host-offer-input">Host's Offer:</label>
+                <textarea id="host-offer-input" rows="5" placeholder="Paste host's offer here..." disabled></textarea>
+                
+                <label for="guest-answer-output">Your Answer (Guest):</label>
+                <textarea id="guest-answer-output" rows="5" readonly></textarea>
+                <button id="generate-answer-btn" disabled>Generate Answer</button>
+                <button id="connect-guest-btn" disabled>Connect Guest</button>
+            </div>
+
+            <div id="ice-candidates">
+                <label for="ice-candidate">ICE Candidates Exchange:</label>
+                <textarea id="ice-candidate" rows="5" placeholder="Manual ICE candidate exchange..."></textarea>
+                <button id="add-ice-btn" disabled>Add ICE Candidate</button>
+            </div>
+        </div>
+
+        <div id="logs">
+            <h3>Logs:</h3>
+            <textarea id="log-area" rows="10" readonly></textarea>
+        </div>
+        
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
